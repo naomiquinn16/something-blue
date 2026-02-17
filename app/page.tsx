@@ -1,65 +1,189 @@
-import Image from "next/image";
+import { ContactForm } from "./components/ContactForm";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://somethingblue.com";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Something Blue",
+  description:
+    "Custom wedding websites crafted with care. We create beautiful, personalized wedding websites that tell your unique love story.",
+  url: siteUrl,
+  email: "naomiquinn16@gmail.com",
+  serviceType: "Wedding Website Design",
+  areaServed: "Worldwide",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Wedding Website Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Custom Wedding Website Design" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "RSVP & Guest Management" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Registry & Gift List Integration" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Photo Galleries & Timeline" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Travel & Accommodation Information" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Ongoing Support & Updates" },
+      },
+    ],
+  },
+};
+
+const services = [
+  {
+    title: "Custom Design",
+    description:
+      "Every website is uniquely designed to reflect your love story. From color palettes to typography, we craft a look that feels authentically you.",
+  },
+  {
+    title: "RSVP & Guest Management",
+    description:
+      "Streamlined RSVP forms, dietary preferences, and guest list management—all in one beautiful, easy-to-use interface for you and your guests.",
+  },
+  {
+    title: "Registry & Gift Lists",
+    description:
+      "Seamlessly integrate your registry links, honeymoon fund, or custom gift lists so guests can find everything in one place.",
+  },
+  {
+    title: "Photo Galleries & Timeline",
+    description:
+      "Showcase your engagement photos, share your story with a custom timeline, and create a space for guests to upload their wedding day photos.",
+  },
+  {
+    title: "Travel & Accommodation",
+    description:
+      "Help out-of-town guests with venue details, accommodation recommendations, and travel information—all beautifully presented.",
+  },
+  {
+    title: "Ongoing Support",
+    description:
+      "We're with you from start to finish. Updates, tweaks, and support throughout your planning journey and beyond the big day.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-stone-200/80 bg-[var(--ivory)]/95 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <a href="#" className="font-display text-xl font-semibold tracking-wide text-stone-800">
+            Something Blue
+          </a>
+          <div className="flex gap-8">
+            <a href="#services" className="text-sm text-stone-600 transition-colors hover:text-[var(--accent)]">
+              Services
+            </a>
+            <a href="#contact" className="text-sm text-stone-600 transition-colors hover:text-[var(--accent)]">
+              Get in touch
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <main>
+      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20" aria-label="Introduction">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-stone-100/80 via-transparent to-transparent" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <p className="mb-4 font-display text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
+            Bespoke Wedding Websites
+          </p>
+          <h1 className="font-display text-5xl font-medium leading-tight text-stone-800 sm:text-6xl md:text-7xl">
+            Your love story,{" "}
+            <span className="italic text-[var(--accent)]">beautifully told</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+          <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-stone-600">
+            We create custom wedding websites that capture your unique style and make planning easier for you and your guests.
+          </p>
+          <a
+            href="#contact"
+            className="mt-10 inline-block rounded-lg border-2 border-[var(--accent)] px-8 py-3 font-medium text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-white"
+          >
+            Get in touch
+          </a>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="border-t border-stone-200 bg-white px-6 py-24" aria-labelledby="services-heading">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-16 text-center">
+            <h2 id="services-heading" className="font-display text-3xl font-medium text-stone-800 sm:text-4xl">
+              What we offer
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-stone-600">
+              From design to deployment, we handle every detail so you can focus on what matters most.
+            </p>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="rounded-xl border border-stone-200 bg-[var(--cream)]/50 p-8 transition-shadow hover:shadow-lg"
+              >
+                <h3 className="font-display text-xl font-medium text-stone-800">{service.title}</h3>
+                <p className="mt-3 leading-relaxed text-stone-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="border-t border-stone-200 px-6 py-24" aria-labelledby="contact-heading">
+        <div className="mx-auto max-w-2xl">
+          <div className="mb-12 text-center">
+            <h2 id="contact-heading" className="font-display text-3xl font-medium text-stone-800 sm:text-4xl">
+              Get in touch
+            </h2>
+            <p className="mt-4 text-stone-600">
+              Ready to create your perfect wedding website? We&apos;d love to hear from you.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-stone-200 bg-white p-8 shadow-sm">
+            <ContactForm />
+          </div>
+          <p className="mt-6 text-center text-sm text-stone-500">
+            Or email us directly at{" "}
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="mailto:naomiquinn16@gmail.com"
+              className="text-[var(--accent)] hover:underline"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              naomiquinn16@gmail.com
+            </a>
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </section>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-stone-200 bg-stone-100/50 px-6 py-12">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="font-display text-lg font-medium text-stone-800">Something Blue</p>
+          <p className="mt-1 text-sm text-stone-500">Bespoke wedding websites, crafted with care</p>
+        </div>
+      </footer>
     </div>
   );
 }

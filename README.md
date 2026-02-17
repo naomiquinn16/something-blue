@@ -1,4 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Something Blue — Bespoke Wedding Websites
+
+A single-page business website for custom wedding website design services.
+
+## SEO
+
+The site is configured for search engines with:
+
+- **Metadata**: Title, description, keywords, Open Graph, and Twitter cards
+- **robots.txt**: Allows all crawlers, references sitemap
+- **sitemap.xml**: Auto-generated at `/sitemap.xml`
+- **Structured data**: JSON-LD LocalBusiness schema for rich results
+
+Set `NEXT_PUBLIC_SITE_URL` in `.env.local` to your live domain (e.g. `https://yoursite.com`) for correct canonical URLs and sitemap. Add an `opengraph-image.png` (1200×630px) to the `app` folder for better social sharing previews.
+
+## Contact Form Setup
+
+To enable the "Get in touch" form to send emails to naomiquinn16@gmail.com:
+
+1. Create a free account at [Formspree](https://formspree.io)
+2. Create a new form and set the recipient email to **naomiquinn16@gmail.com**
+3. Copy your form endpoint URL (e.g. `https://formspree.io/f/xxxxxxxx`)
+4. Create a `.env.local` file in the project root and add:
+   ```
+   NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+   ```
+5. Restart the dev server
 
 ## Getting Started
 
