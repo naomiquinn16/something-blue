@@ -55,7 +55,7 @@ const services = [
   {
     title: "RSVP & Guest Management",
     description:
-      "Streamlined RSVP forms, dietary preferences, and guest list management—all in one beautiful, easy-to-use interface for you and your guests.",
+      "Streamlined RSVP forms, dietary preferences, and guest list management — all in one beautiful, easy-to-use interface for you and your guests.",
   },
   {
     title: "Registry & Gift Lists",
@@ -70,7 +70,7 @@ const services = [
   {
     title: "Travel & Accommodation",
     description:
-      "Help out-of-town guests with venue details, accommodation recommendations, and travel information—all beautifully presented.",
+      "Help out-of-town guests with venue details, accommodation recommendations, and travel information - all beautifully presented.",
   },
   {
     title: "Ongoing Support",
