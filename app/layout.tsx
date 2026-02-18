@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://somethingblue.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://somethingblue.ie";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

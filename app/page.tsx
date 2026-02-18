@@ -1,4 +1,5 @@
 import { ContactForm } from "./components/ContactForm";
+import { Hero } from "./components/Hero";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://somethingblue.com";
 
@@ -103,26 +104,8 @@ export default function Home() {
 
       {/* Hero */}
       <main>
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20" aria-label="Introduction">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-stone-100/80 via-transparent to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
-          <p className="mb-4 font-display text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
-            Bespoke Wedding Websites
-          </p>
-          <h1 className="font-display text-5xl font-medium leading-tight text-stone-800 sm:text-6xl md:text-7xl">
-            Your love story,{" "}
-            <span className="italic text-[var(--accent)]">beautifully told</span>
-          </h1>
-          <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-stone-600">
-            We create custom wedding websites that capture your unique style and make planning easier for you and your guests.
-          </p>
-          <a
-            href="#contact"
-            className="mt-10 inline-block rounded-lg border-2 border-[var(--accent)] px-8 py-3 font-medium text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-white"
-          >
-            Get in touch
-          </a>
-        </div>
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-20" aria-label="Introduction">
+        <Hero />
       </section>
 
       {/* Services */}
