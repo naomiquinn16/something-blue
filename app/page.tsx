@@ -311,7 +311,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="border-t border-stone-200 bg-[var(--cream)]/30 px-6 py-24" aria-labelledby="testimonials-heading">
+      <section id="testimonials" className="border-t border-stone-200 bg-white px-6 py-24" aria-labelledby="testimonials-heading">
         <div className="mx-auto max-w-5xl">
           <div className="mb-16 text-center">
             <h2 id="testimonials-heading" className="font-display text-3xl font-medium text-stone-800 sm:text-4xl">
@@ -341,7 +341,7 @@ export default function Home() {
             ].map((testimonial) => (
               <blockquote
                 key={testimonial.name}
-                className="flex flex-col rounded-xl border border-stone-200 bg-white p-8 shadow-sm"
+                className="flex flex-col rounded-xl border border-stone-200 bg-[var(--cream)]/50 p-8 transition-shadow hover:shadow-lg"
               >
                 <p className="flex-1 text-stone-600">&ldquo;{testimonial.quote}&rdquo;</p>
                 <footer className="mt-6">
