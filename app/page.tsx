@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ContactForm } from "./components/ContactForm";
 import { Hero } from "./components/Hero";
+import { Nav } from "./components/Nav";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://somethingblue.com";
 
@@ -86,40 +87,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-stone-200/80 bg-[var(--ivory)]/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-2">
-            <Image
-              src="/logo-ring.png"
-              alt="Something Blue"
-              width={36}
-              height={36}
-              className="h-9 w-9"
-            />
-            <span className="font-display text-xl font-semibold tracking-wide text-stone-800">
-              Something Blue
-            </span>
-          </a>
-          <div className="flex gap-8">
-            <a href="#services" className="text-sm text-stone-600 transition-colors hover:text-[var(--accent)]">
-              Services
-            </a>
-            <a href="#portfolio" className="text-sm text-stone-600 transition-colors hover:text-[var(--accent)]">
-              Portfolio
-            </a>
-            <a href="#pricing" className="text-sm text-stone-600 transition-colors hover:text-[var(--accent)]">
-              Pricing
-            </a>
-            <a href="#testimonials" className="text-sm text-stone-600 transition-colors hover:text-[var(--accent)]">
-              Testimonials
-            </a>
-            <a href="#contact" className="text-sm text-stone-600 transition-colors hover:text-[var(--accent)]">
-              Get in touch
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
       <main>
