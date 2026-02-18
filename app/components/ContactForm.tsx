@@ -36,22 +36,6 @@ export function ContactForm() {
     }
   }
 
-  if (!FORMSPREE_ENDPOINT) {
-    return (
-      <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-6 text-amber-800">
-        <p className="font-medium">Form setup required</p>
-        <p className="mt-2 text-sm">
-          Add <code className="rounded bg-amber-100 px-1">NEXT_PUBLIC_FORMSPREE_ENDPOINT</code> to your{" "}
-          <code className="rounded bg-amber-100 px-1">.env.local</code>. Create a free form at{" "}
-          <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" className="underline">
-            formspree.io
-          </a>{" "}
-          and set the recipient to naomiquinn16@gmail.com.
-        </p>
-      </div>
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
@@ -87,11 +71,10 @@ export function ContactForm() {
           Wedding date <span className="text-stone-400">(optional)</span>
         </label>
         <input
-          type="text"
+          type="date"
           id="wedding-date"
           name="wedding_date"
-          className="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-stone-800 placeholder-stone-400 transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
-          placeholder="Summer 2025"
+          className="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-stone-800 transition-colors focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)] [color-scheme:light]"
           disabled={status === "submitting"}
         />
       </div>
@@ -116,7 +99,7 @@ export function ContactForm() {
       )}
       {status === "error" && (
         <p className="rounded-lg bg-red-50 p-4 text-red-800">
-          Something went wrong. Please try again or email us directly at naomiquinn16@gmail.com.
+          Something went wrong. Please try again.
         </p>
       )}
       <button
