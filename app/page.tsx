@@ -148,19 +148,36 @@ export default function Home() {
             </div>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                { title: "Sarah & James", style: "Classic garden wedding", image: "/portfolio-1.jpg" },
-                { title: "Emma & Michael", style: "Beach destination", image: "/portfolio-2.jpg" },
-                { title: "Sophie & David", style: "Rustic barn celebration", image: "/portfolio-3.jpg" },
+                { title: "Laura & Ryan", style: "Classic garden wedding", url: "https://v.etsystatic.com/video/upload/ac_none,du_15,q_auto:good/Rhionn_Images_-_WEBSITES_3_t8mlqx.mp4", isVideo: true },
+                { title: "Sophie & James", style: "Beach destination", url: "https://v.etsystatic.com/video/upload/ac_none,du_15,q_auto:good/ETSY_RHIONN_2_croygg.mp4", isVideo: true },
+                { title: "Sophia & Daniel", style: "Rustic chateau celebration", url: "https://v.etsystatic.com/video/upload/ac_none,du_15,q_auto:good/ETSY_RHIONN_1_ey1cjz.mp4", isVideo: true },
               ].map((project) => (
-                <a
+                <div
                   key={project.title}
-                  href="#contact"
                   className="group overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm transition-all hover:shadow-lg"
                 >
-                  <div className="aspect-[4/3] bg-stone-200">
-                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-stone-100 to-stone-200 text-stone-400">
-                      <span className="font-display text-sm">{project.title}</span>
-                    </div>
+                  <div className="relative aspect-[4/3] bg-gradient-to-br from-stone-100 to-stone-200 overflow-hidden">
+                    {project.isVideo ? (
+                      <iframe
+                        src={project.url}
+                        title={project.title}
+                        className="absolute inset-0 h-full w-full border-0"
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-full w-full flex-col items-center justify-center gap-2 p-4 text-center"
+                      >
+                        <span className="font-display text-lg font-medium text-stone-600 transition-colors group-hover:text-[var(--accent)]">
+                          {project.title}
+                        </span>
+                        <span className="text-sm text-stone-500">View site →</span>
+                      </a>
+                    )}
                   </div>
                   <div className="p-4">
                     <h3 className="font-display font-medium text-stone-800 group-hover:text-[var(--accent)]">
@@ -168,7 +185,7 @@ export default function Home() {
                     </h3>
                     <p className="mt-1 text-sm text-stone-500">{project.style}</p>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </div>
@@ -306,17 +323,17 @@ export default function Home() {
               {[
                 {
                   quote: "Our wedding website was absolutely stunning. Every guest commented on how beautiful and easy to use it was. Couldn't have asked for more!",
-                  name: "Sarah & James",
+                  name: "Laura & Ryan",
                   wedding: "Garden wedding, Cotswolds",
                 },
                 {
                   quote: "From start to finish, the process was seamless. The team understood our vision and brought it to life. Highly recommend to any couple planning their big day.",
-                  name: "Emma & Michael",
+                  name: "Sophie & James",
                   wedding: "Beach wedding, Cornwall",
                 },
                 {
                   quote: "We loved our bespoke website so much we're still using it to share our honeymoon photos. Worth every penny.",
-                  name: "Sophie & David",
+                  name: "Sophia & Daniel",
                   wedding: "Barn wedding, Yorkshire",
                 },
               ].map((testimonial) => (
