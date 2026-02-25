@@ -325,17 +325,17 @@ export default function Home() {
                 {
                   quote: "Our wedding website was absolutely stunning. Every guest commented on how beautiful and easy to use it was. Couldn't have asked for more!",
                   name: "Laura & Ryan",
-                  wedding: "Garden wedding, Cotswolds",
+                  wedding: "Garden wedding",
                 },
                 {
                   quote: "From start to finish, the process was seamless. The team understood our vision and brought it to life. Highly recommend to any couple planning their big day.",
                   name: "Sophie & James",
-                  wedding: "Beach wedding, Cornwall",
+                  wedding: "Beach wedding",
                 },
                 {
                   quote: "We loved our bespoke website so much we're still using it to share our honeymoon photos. Worth every penny.",
                   name: "Sophia & Daniel",
-                  wedding: "Barn wedding, Yorkshire",
+                  wedding: "Chateau wedding",
                 },
               ].map((testimonial) => (
                 <blockquote
