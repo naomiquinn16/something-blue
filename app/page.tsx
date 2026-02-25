@@ -209,7 +209,7 @@ export default function Home() {
                   price: "€199",
                   description: "Perfect for intimate weddings",
                   features: [
-                    "Custom design",
+                    "Semi-custom design",
                     "RSVP & guest list",
                     "Registry links",
                     "1 year hosting",
@@ -223,6 +223,7 @@ export default function Home() {
                   description: "Our most popular choice",
                   features: [
                     "Everything in Essential",
+                    "Custom design",
                     "Photo gallery",
                     "Timeline & story",
                     "2 years hosting",
